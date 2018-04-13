@@ -1,0 +1,35 @@
+{
+    "apps":
+    [
+        {
+            "name": "Viscosity",
+            "install": "/Applications/Viscosity.app",
+            "paths":
+            [
+                "/Library/PrivilegedHelperTools/com.sparklabs.ViscosityHelper",
+                "/Library/LaunchDaemons/com.sparklabs.ViscosityHelper.plist",
+                "/Library/Application Support/Viscosity"
+            ]
+        },
+        {
+            "name": "VidyoDesktop",
+            "install": "",
+            "paths": ["t"]
+        },
+        {
+            "name": "VidyoConnect",
+            "install": "",
+            "paths": []
+        },
+        {
+            "name": "Thunderbird",
+            "install": "",
+            "paths": []
+        },
+        {
+            "name": "Slack",
+            "install": "",
+            "paths": []
+        }
+    ]
+}
