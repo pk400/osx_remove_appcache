@@ -24,5 +24,12 @@ SEARCH_ARGS_STRING=$(echo ${@:2} | tr ' ' '\n' \
 jq ".apps[] | select($SEARCH_ARGS_STRING)" $FILE | jq ".paths[]"\
 	| while read path
 	do
-		echo $path | tr ' ' '\ ' | xargs rm -rf
+		FMT_PATH=$(echo $path | tr ' ' '\ ')
+		ERR=$(echo $FMT_PATH | xargs rm -r 2>&1)
+		if [ $? -eq 0 ]
+		then
+			printf "%s %s\n" "SUCCESS!" "$FMT_PATH"
+		else
+			printf "%s %s\n > %s\n" "FAILED!" "$FMT_PATH" "$ERR"
+		fi	
 	done
