@@ -1,0 +1,31 @@
+{
+    "apps":
+    [
+        {
+            "name":"Viscosity",
+            "install": "/Applications/Viscosity.app",
+            "paths":
+            [
+                "/Library/Application Support/Viscosity",
+                "/Library/PrivilegedHelperTools/com.sparklabs.ViscosityHelper",
+                "/Library/LaunchDaemons/com.sparklabs.ViscosityHelper.plist",
+                "~/Library/Application Support/Viscosity",
+                "~/Library/WebKit/com.viscosityvpn.Viscosity",
+                "~/Library/Preferences/com.viscosityvpn.Viscosity.plist",
+                "~/Library/Caches/com.viscosityvpn.Viscosity"
+            ]
+        },
+        {
+            "name": "TestApp",
+            "install": "path in /Application",
+            "paths":
+            [
+                "/Library/Application Support/testfolder1/file1",
+                "/Library/Application Support/testfolder1",
+                "/Library/PrivilegedHelperTools/testfolder2/file2",
+                "/Library/PrivilegedHelperTools/testfolder2",
+                "~/Library/Application Support/testfolder3"
+            ]
+        }
+    ]
+}
