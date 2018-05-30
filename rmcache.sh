@@ -1,5 +1,6 @@
 #! /bin/bash
 
+# Set default JSON file
 declare FILE="paths.json";
 
 # Script needs sudo permissions to run, because tries to access files and
