@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # Set default JSON file
-declare FILE="paths.json";
+declare FILE="json/paths.json";
 
 # Script needs sudo permissions to run, because tries to access files and
 # directories outside the user's home directory
@@ -11,13 +11,13 @@ then
 	exit 1
 fi
 
-# The script can be passed a json file as its first argument to allow for more
-# customization options
+# The script can be passed a json file as its first argument for more customization
 if [[ ${1: -5} == ".json" ]]; then FILE=$1; fi
 
 # Take the arguments passed to the script and convert them into something that
 # the jq function can use.
-SEARCH_ARGS_STRING=$(echo ${@:2} | tr ' ' '\n' \
+SEARCH_ARGS_STRING=$(echo ${@:2} \
+	| tr ' ' '\n' \
 	| awk 'NR==1 { printf ".name==\"%s\"", $0 } NR>1 { printf " or .name==\"%s\"", $0 }')
 
 # For each of the apps listed in the json file, delete all the files at the
