@@ -1,7 +1,9 @@
 #! /bin/bash
 
+# Directory containing app scripts
 declare SCRIPTS_DIR="scripts"
 
+# Script should only be run on OSX. Will exit if on another OS
 if [[ $(uname) == "Darwin" ]]
 then
 	# Script needs sudo permissions to run, because tries to access files and
