@@ -8,11 +8,6 @@ if [[ $(uname) == "Darwin" ]]
 then
 	# Script needs sudo permissions to run, because tries to access files and
 	# directories outside the user's home directory
-	if [[ $(id -u) -ne 0 ]]
-	then
-		echo "Script needs admin privileges to run. Please try again with sudo."
-		exit 1
-	fi
 
 	cd $SCRIPTS_DIR
 
@@ -22,7 +17,7 @@ then
 		# in order of how they are displayed in the `ls` command
 		for SCRIPT in $(ls)
 		do
-			echo "Running $SCRIPT .."
+			echo "Running $SCRIPT.sh script.."
 			source ./$SCRIPT
 			echo ""
 		done
@@ -30,7 +25,7 @@ then
 		# If the user wants to run a selection of scripts. They can add them as arguments
 		for ARG in $@
 		do
-			echo "Running $ARG .."
+			echo "Running $ARG.sh script .."
 			source ./$SCRIPT/$ARG.sh
 			echo ""
 		done | sort
